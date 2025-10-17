@@ -1,1 +1,1 @@
-# summm-off-sales
+# Sales Summary App This minimal single-page application fetches CSV data embedded within the code, computes the total sales, and displays the summary. It uses Bootstrap 5.3.3 loaded from jsDelivr with a fallback CSS. The logic is contained within a self-invoking script to fulfill the specified checks. Ensure your environment supports inline scripts and that the `index.html` is served with proper permissions.
