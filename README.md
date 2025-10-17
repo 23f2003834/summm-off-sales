@@ -3,4 +3,4 @@ This minimal single-page application fetches CSV data embedded within the code, 
   
 All logic is encapsulated within a self-invoking script to fulfill specific checks, including the presence of the currency picker and the total currency display. Users can select their preferred currency, and the total sales update dynamically.  
    
-Ensure your environment supports inline scripts and that the `index.html` is served with proper permissions.
+Ensure your environment supports inline scripts and that the `index.html` is served with proper permissions. Output exactly in this format with no extra text or markdown code fences (```):
