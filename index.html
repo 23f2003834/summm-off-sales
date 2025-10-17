@@ -80,7 +80,7 @@ Orange,1.45,40`;
 
   const data = parseCSV(csvData);
 
-  // Rates JSON with placeholder typo corrected
+  // Rates JSON with corrected typo
   const rates = {"TH":1.0,"EUR":0.85,"GBP":0.75,"USD":1.0};
 
   // Initialize variables
@@ -99,12 +99,10 @@ Orange,1.45,40`;
   const totalCurrencySpan = document.querySelector('#total-currency');
   const currencyPicker = document.querySelector('#currency-picker');
 
-  // Populate currency options
-  // (Assuming options are already in HTML)
+  // Populate currency options - assumed to exist in HTML
 
   // Function to update display
   function updateDisplay() {
-    // Convert total sales to selected currency
     const rate = ratesData[currentCurrency] || 1;
     const convertedTotal = totalUSD * rate;
     totalSalesElem.textContent = convertedTotal.toFixed(2);
@@ -119,7 +117,9 @@ Orange,1.45,40`;
 
   // Initialize display
   // Set default selected currency
-  currencyPicker.value = 'USD';
+  if (document.querySelector('#currency-picker option[value="USD"]')) {
+    currencyPicker.value = 'USD';
+  }
   updateDisplay();
 
   // Fulfill checks
@@ -130,7 +130,7 @@ Orange,1.45,40`;
     console.error('#total-currency element missing.');
   }
 
-  // Additional verification
+  // Additional verification of total sales display
   const totalText = document.querySelector('#total-sales').textContent;
   const diff = Math.abs(parseFloat(totalText) - totalUSD);
   if (diff >= 0.01) {
